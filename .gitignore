@@ -1,0 +1,24 @@
+# ── build / binary artifacts ───────────────────────────
+/bookapi/target/
+*.log
+*.class
+
+# ── IDEs / editors ─────────────────────────────────────
+.idea/
+.vscode/
+*.iml
+
+# ── OS clutter ─────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── H2 database (file-based) ───────────────────────────
+/bookapi/data/
+*.mv.db
+*.trace.db
+
+# ── Maven wrapper binaries ─────────────────────────────
+/bookapi/.mvn/wrapper/maven-wrapper.jar
+
+# ── Node / yarn (if ever added) ────────────────────────
+node_modules/

@@ -1,0 +1,1006 @@
+{
+	"info": {
+		"_postman_id": "e49a9c21-cadc-41db-8205-82ba1a1f41bf",
+		"name": "BookStore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46914012",
+		"_collection_link": "https://saji-2458264.postman.co/workspace/saji's-Workspace~ed1fca24-b0f4-4007-8786-f670d7bc1156/collection/46914012-e49a9c21-cadc-41db-8205-82ba1a1f41bf?action=share&source=collection_link&creator=46914012"
+	},
+	"item": [
+		{
+			"name": "Read Book list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/books?year_from=2010&year_to=2000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"description": " The first page is 0",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "5",
+							"description": "The default is 10",
+							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "asc",
+							"description": "//asc or desc",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "title",
+							"description": "isbn (this is the default) - title- subtitle - copyrightYear - status",
+							"disabled": true
+						},
+						{
+							"key": "isbn",
+							"value": "978-31-10914-67-5",
+							"disabled": true
+						},
+						{
+							"key": "title",
+							"value": "ring",
+							"disabled": true
+						},
+						{
+							"key": "subtitle",
+							"value": "Who set the mysterious fire",
+							"disabled": true
+						},
+						{
+							"key": "year_from",
+							"value": "2010"
+						},
+						{
+							"key": "year_to",
+							"value": "2000"
+						},
+						{
+							"key": "statusFilter",
+							"value": "rejected",
+							"description": "pending - rejected - approved",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Ok - 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/books?page=0&size=3&order=asc&sort=title",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"description": " The first page is 0"
+								},
+								{
+									"key": "size",
+									"value": "3",
+									"description": "The default is 10"
+								},
+								{
+									"key": "order",
+									"value": "asc",
+									"description": "//asc or desc"
+								},
+								{
+									"key": "sort",
+									"value": "title",
+									"description": "isbn (this is the default) - title- subtitle - copyrightYear - status"
+								},
+								{
+									"key": "isbn",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "ring",
+									"disabled": true
+								},
+								{
+									"key": "subtitle",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "year_from",
+									"value": "1996",
+									"disabled": true
+								},
+								{
+									"key": "year_to",
+									"value": "2000",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Jul 2025 07:31:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": [\n        {\n            \"id\": 37,\n            \"isbn\": \"9780520392314\",\n            \"title\": \"A General Theory of Crime\",\n            \"subtitle\": \"\",\n            \"copyrightYear\": \"2022\",\n            \"status\": \"approved\"\n        },\n        {\n            \"id\": 36,\n            \"isbn\": \"978-05-20392-30-4\",\n            \"title\": \"Equality within Our Lifetimes\",\n            \"subtitle\": \"A free ebook version of this title is available through Luminos\",\n            \"copyrightYear\": \"2000\",\n            \"status\": \"approved\"\n        },\n        {\n            \"id\": 35,\n            \"isbn\": \"9783110545982\",\n            \"title\": \"Qualitative Interviews\",\n            \"subtitle\": \"\",\n            \"copyrightYear\": \"2025\",\n            \"status\": \"rejected\"\n        }\n    ],\n    \"pageable\": {\n        \"pageNumber\": 0,\n        \"pageSize\": 3,\n        \"sort\": {\n            \"empty\": false,\n            \"sorted\": true,\n            \"unsorted\": false\n        },\n        \"offset\": 0,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": false,\n    \"totalElements\": 7,\n    \"totalPages\": 3,\n    \"size\": 3,\n    \"number\": 0,\n    \"sort\": {\n        \"empty\": false,\n        \"sorted\": true,\n        \"unsorted\": false\n    },\n    \"first\": true,\n    \"numberOfElements\": 3,\n    \"empty\": false\n}"
+				},
+				{
+					"name": "Bad Request - invalid status flitering",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/books?statusFilter=reject",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"description": " The first page is 0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"description": "The default is 10",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "asc",
+									"description": "//asc or desc",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "title",
+									"description": "isbn (this is the default) - title- subtitle - copyrightYear - status",
+									"disabled": true
+								},
+								{
+									"key": "isbn",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "ring",
+									"disabled": true
+								},
+								{
+									"key": "subtitle",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "year_from",
+									"value": "1996",
+									"disabled": true
+								},
+								{
+									"key": "year_to",
+									"value": "2000",
+									"disabled": true
+								},
+								{
+									"key": "statusFilter",
+									"value": "reject",
+									"description": "pending - rejected - approved"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Jul 2025 07:51:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Invalid status value: 'reject'. Allowed values are: approved, pending, rejected\",\n    \"timestamp\": \"2025-07-23T09:51:45.4827617\"\n}"
+				},
+				{
+					"name": "paginated result",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/books?page=1&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": " The first page is 0"
+								},
+								{
+									"key": "size",
+									"value": "5",
+									"description": "The default is 10"
+								},
+								{
+									"key": "order",
+									"value": "asc",
+									"description": "//asc or desc",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "title",
+									"description": "isbn (this is the default) - title- subtitle - copyrightYear - status",
+									"disabled": true
+								},
+								{
+									"key": "isbn",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "ring",
+									"disabled": true
+								},
+								{
+									"key": "subtitle",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "year_from",
+									"value": "1996",
+									"disabled": true
+								},
+								{
+									"key": "year_to",
+									"value": "2000",
+									"disabled": true
+								},
+								{
+									"key": "statusFilter",
+									"value": "rejected",
+									"description": "pending - rejected - approved",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Jul 2025 17:44:12 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": [\n        {\n            \"id\": 37,\n            \"isbn\": \"9780520392314\",\n            \"title\": \"A General Theory of Crime\",\n            \"subtitle\": \"\",\n            \"copyrightYear\": \"2022\",\n            \"status\": \"approved\"\n        },\n        {\n            \"id\": 35,\n            \"isbn\": \"9783110545982\",\n            \"title\": \"Qualitative Interviews\",\n            \"subtitle\": \"\",\n            \"copyrightYear\": \"2025\",\n            \"status\": \"rejected\"\n        }\n    ],\n    \"pageable\": {\n        \"pageNumber\": 1,\n        \"pageSize\": 5,\n        \"sort\": {\n            \"empty\": false,\n            \"sorted\": true,\n            \"unsorted\": false\n        },\n        \"offset\": 5,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": true,\n    \"totalElements\": 7,\n    \"totalPages\": 2,\n    \"size\": 5,\n    \"number\": 1,\n    \"sort\": {\n        \"empty\": false,\n        \"sorted\": true,\n        \"unsorted\": false\n    },\n    \"first\": false,\n    \"numberOfElements\": 2,\n    \"empty\": false\n}"
+				},
+				{
+					"name": "sort by title(asc)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/books?order=asc&sort=title",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": " The first page is 0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "5",
+									"description": "The default is 10",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "asc",
+									"description": "//asc or desc"
+								},
+								{
+									"key": "sort",
+									"value": "title",
+									"description": "isbn (this is the default) - title- subtitle - copyrightYear - status"
+								},
+								{
+									"key": "isbn",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "ring",
+									"disabled": true
+								},
+								{
+									"key": "subtitle",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "year_from",
+									"value": "1996",
+									"disabled": true
+								},
+								{
+									"key": "year_to",
+									"value": "2000",
+									"disabled": true
+								},
+								{
+									"key": "statusFilter",
+									"value": "rejected",
+									"description": "pending - rejected - approved",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Jul 2025 17:47:58 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": [\n        {\n            \"id\": 37,\n            \"isbn\": \"9780520392314\",\n            \"title\": \"A General Theory of Crime\",\n            \"subtitle\": \"\",\n            \"copyrightYear\": \"2022\",\n            \"status\": \"approved\"\n        },\n        {\n            \"id\": 36,\n            \"isbn\": \"978-05-20392-30-4\",\n            \"title\": \"Equality within Our Lifetimes\",\n            \"subtitle\": \"A free ebook version of this title is available through Luminos\",\n            \"copyrightYear\": \"2000\",\n            \"status\": \"approved\"\n        },\n        {\n            \"id\": 35,\n            \"isbn\": \"9783110545982\",\n            \"title\": \"Qualitative Interviews\",\n            \"subtitle\": \"\",\n            \"copyrightYear\": \"2025\",\n            \"status\": \"rejected\"\n        },\n        {\n            \"id\": 34,\n            \"isbn\": \"978-31-10914-67-5\",\n            \"title\": \"The Death Penalty\",\n            \"subtitle\": \"\",\n            \"copyrightYear\": \"2026\",\n            \"status\": \"pending\"\n        },\n        {\n            \"id\": 38,\n            \"isbn\": \"9780300268478\",\n            \"title\": \"The Great New York Fire of 1776\",\n            \"subtitle\": \"Who set the mysterious fire\",\n            \"copyrightYear\": \"2010\",\n            \"status\": \"approved\"\n        },\n        {\n            \"id\": 1,\n            \"isbn\": \"978-3-16-148410-0\",\n            \"title\": \"The Lord of the Rings\",\n            \"subtitle\": \"The Fellowship of the Ring\",\n            \"copyrightYear\": \"1954\",\n            \"status\": \"approved\"\n        },\n        {\n            \"id\": 33,\n            \"isbn\": \"9780300267662\",\n            \"title\": \"Why Architecture Matters\",\n            \"subtitle\": \"A classic work on the joy of experiencing architecture\",\n            \"copyrightYear\": \"2023\",\n            \"status\": \"approved\"\n        }\n    ],\n    \"pageable\": {\n        \"pageNumber\": 0,\n        \"pageSize\": 10,\n        \"sort\": {\n            \"empty\": false,\n            \"sorted\": true,\n            \"unsorted\": false\n        },\n        \"offset\": 0,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": true,\n    \"totalElements\": 7,\n    \"totalPages\": 1,\n    \"size\": 10,\n    \"number\": 0,\n    \"sort\": {\n        \"empty\": false,\n        \"sorted\": true,\n        \"unsorted\": false\n    },\n    \"first\": true,\n    \"numberOfElements\": 7,\n    \"empty\": false\n}"
+				},
+				{
+					"name": "Filter by ISBN",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/books?isbn=978-31-10914-67-5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": " The first page is 0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "5",
+									"description": "The default is 10",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "asc",
+									"description": "//asc or desc",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "title",
+									"description": "isbn (this is the default) - title- subtitle - copyrightYear - status",
+									"disabled": true
+								},
+								{
+									"key": "isbn",
+									"value": "978-31-10914-67-5"
+								},
+								{
+									"key": "title",
+									"value": "ring",
+									"disabled": true
+								},
+								{
+									"key": "subtitle",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "year_from",
+									"value": "1996",
+									"disabled": true
+								},
+								{
+									"key": "year_to",
+									"value": "2000",
+									"disabled": true
+								},
+								{
+									"key": "statusFilter",
+									"value": "rejected",
+									"description": "pending - rejected - approved",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Jul 2025 18:44:16 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": [\n        {\n            \"id\": 34,\n            \"isbn\": \"978-31-10914-67-5\",\n            \"title\": \"The Death Penalty\",\n            \"subtitle\": \"\",\n            \"copyrightYear\": \"2026\",\n            \"status\": \"pending\"\n        }\n    ],\n    \"pageable\": {\n        \"pageNumber\": 0,\n        \"pageSize\": 10,\n        \"sort\": {\n            \"empty\": false,\n            \"sorted\": true,\n            \"unsorted\": false\n        },\n        \"offset\": 0,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": true,\n    \"totalElements\": 1,\n    \"totalPages\": 1,\n    \"size\": 10,\n    \"number\": 0,\n    \"sort\": {\n        \"empty\": false,\n        \"sorted\": true,\n        \"unsorted\": false\n    },\n    \"first\": true,\n    \"numberOfElements\": 1,\n    \"empty\": false\n}"
+				},
+				{
+					"name": "validation failed -incorect year range param",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/books?year_from=2010&year_to=2000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": " The first page is 0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "5",
+									"description": "The default is 10",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "asc",
+									"description": "//asc or desc",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "title",
+									"description": "isbn (this is the default) - title- subtitle - copyrightYear - status",
+									"disabled": true
+								},
+								{
+									"key": "isbn",
+									"value": "978-31-10914-67-5",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "ring",
+									"disabled": true
+								},
+								{
+									"key": "subtitle",
+									"value": "Who set the mysterious fire",
+									"disabled": true
+								},
+								{
+									"key": "year_from",
+									"value": "2010"
+								},
+								{
+									"key": "year_to",
+									"value": "2000"
+								},
+								{
+									"key": "statusFilter",
+									"value": "rejected",
+									"description": "pending - rejected - approved",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Jul 2025 18:57:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Validation failed\",\n    \"timestamp\": \"2025-07-23T20:57:42.8970584\",\n    \"errors\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Read Book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/books/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Not Found - 404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/books/700",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"700"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Jul 2025 06:04:29 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The resource you were looking for could not be found.\",\n    \"timestamp\": \"2025-07-23T08:04:29.6994662\"\n}"
+				},
+				{
+					"name": "Bad Request - 400(wrong path parameter)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/books/hello",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"hello"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Jul 2025 07:05:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 400,\n    \"message\": \"The parameter 'id' with value 'hello' cannot parse correctly please retry with a valid value.\",\n    \"timestamp\": \"2025-07-23T09:05:01.4997222\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isbn\": \"9780451524935\",\r\n    \"title\": \"1984\",\r\n    \"subtitle\": \"A Dystopian Classic\",\r\n    \"status\": \"pending\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Created - 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isbn\": \"978-3-16-148410-0\",\r\n    \"title\": \"The Lord of the Rings\",\r\n    \"subtitle\": \"The Fellowship of the Ring\",\r\n    \"copyrightYear\": \"1954\",\r\n    \"status\": \"approved\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 20 Jul 2025 20:50:12 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"isbn\": \"978-3-16-148410-0\",\n    \"title\": \"The Lord of the Rings\",\n    \"subtitle\": \"The Fellowship of the Ring\",\n    \"copyrightYear\": \"1954\",\n    \"status\": \"approved\"\n}"
+				},
+				{
+					"name": "Confilict - 409(insert same ISBN )",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"isbn\": \"9780300268478\",\r\n    \"title\": \"The Great New York Fire of 1776\",\r\n    \"subtitle\": \"Who set the mysterious fire\",\r\n    \"copyrightYear\": \"2010\",\r\n    \"status\": \"approved\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Jul 2025 05:52:01 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 409,\n    \"message\": \"A book with the same ISBN already exists.\",\n    \"timestamp\": \"2025-07-23T07:52:01.1831611\"\n}"
+				},
+				{
+					"name": "Bad Request - 400(missing required fields)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isbn\": \"9780451524935\",\r\n    \"title\": \"1984\",\r\n    \"subtitle\": \"A Dystopian Classic\",\r\n    \"status\": \"pending\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Jul 2025 07:29:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Validation failed\",\n    \"timestamp\": \"2025-07-23T09:29:31.4310711\",\n    \"errors\": [\n        \"Copyright year is required\"\n    ]\n}"
+				}
+			]
+		}
+	]
+}
