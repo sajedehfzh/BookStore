@@ -1,12 +1,11 @@
 package com.degruyterbrill.bookapi.service;
 
-import com.degruyterbrill.bookapi.dto.BookListRequest;
-import com.degruyterbrill.bookapi.dto.BookRequest;
-import com.degruyterbrill.bookapi.exception.BadRequestException;
-import com.degruyterbrill.bookapi.exception.ResourceNotFoundException;
-import com.degruyterbrill.bookapi.model.Book;
-import com.degruyterbrill.bookapi.model.BookStatus;
-import com.degruyterbrill.bookapi.repository.BookRepository;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.degruyterbrill.bookapi.dto.BookUpdateRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -15,12 +14,18 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.servlet.function.EntityResponse;
+
+import com.degruyterbrill.bookapi.dto.BookListRequest;
+import com.degruyterbrill.bookapi.dto.BookRequest;
+import com.degruyterbrill.bookapi.exception.BadRequestException;
+import com.degruyterbrill.bookapi.exception.ResourceNotFoundException;
+import com.degruyterbrill.bookapi.model.Book;
+import com.degruyterbrill.bookapi.model.BookStatus;
+import com.degruyterbrill.bookapi.repository.BookRepository;
 
 import jakarta.persistence.criteria.Predicate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Service class for managing books.
@@ -85,8 +90,7 @@ public class BookService {
      * @throws ResourceNotFoundException if no book is found with the given ID.
      */
     public Book getBookById(Long id) {
-        return bookRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Book not found with id: " + id));
+        return bookRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Book not found with id: " + id));
     }
 
     /**
@@ -104,4 +108,27 @@ public class BookService {
         book.setStatus(bookRequest.getStatus());
         return bookRepository.save(book);
     }
+
+    public void deleteBook(Long id){
+       Book book= bookRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("book that you want ot delete not exist " + id));
+       bookRepository.delete(book);
+    }
+
+    public Book updateBook(Long id, BookUpdateRequest newBook){
+       Book book= bookRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("newBook that you want ot delete not exist " + id));
+       if(newBook.getCopyrightYear()!=null)
+       { book.setCopyrightYear(newBook.getCopyrightYear()); }
+       if(newBook.getIsbn()!=null)
+       {book.setIsbn(newBook.getIsbn());}
+        if(newBook.getStatus()!=null){
+       book.setStatus(newBook.getStatus());}
+        if(newBook.getTitle()!=null)
+        {book.setTitle(newBook.getTitle());}
+        if(newBook.getTitle()!=null){
+       book.setSubtitle(newBook.getSubtitle());}
+       return bookRepository.save(book);
+
+    }
+
+   
 }

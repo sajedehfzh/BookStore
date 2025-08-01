@@ -2,6 +2,7 @@ package com.degruyterbrill.bookapi.controller;
 
 import com.degruyterbrill.bookapi.dto.BookListRequest;
 import com.degruyterbrill.bookapi.dto.BookRequest;
+import com.degruyterbrill.bookapi.dto.BookUpdateRequest;
 import com.degruyterbrill.bookapi.model.Book;
 import com.degruyterbrill.bookapi.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,4 +59,20 @@ public class BookController {
         Book createdBook = bookService.createBook(bookRequest);
         return new ResponseEntity<>(createdBook, HttpStatus.CREATED);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteBook(@PathVariable Long id){
+        bookService.deleteBook(id);
+        return ResponseEntity.noContent().build();
+
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Book> updateBook(@PathVariable Long id,
+                                           @RequestBody BookUpdateRequest book)
+    {
+        Book newBook = bookService.updateBook(id, book);
+        return ResponseEntity.ok(newBook);
+    }
+
 }

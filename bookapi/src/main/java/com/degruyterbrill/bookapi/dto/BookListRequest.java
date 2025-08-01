@@ -1,6 +1,8 @@
 package com.degruyterbrill.bookapi.dto;
 import com.degruyterbrill.bookapi.validator.ValidYearRange;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Represents the query parameters for listing and filtering books.
@@ -8,6 +10,8 @@ import lombok.Data;
  */
 @Data
 @ValidYearRange
+@Getter
+@Setter
 public class BookListRequest {
     /**
      * The page number to retrieve (0-indexed). Defaults to 0.
